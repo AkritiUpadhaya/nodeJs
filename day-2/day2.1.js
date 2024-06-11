@@ -13,3 +13,5 @@ const currentOs={
     homedir: os.homedir(),
 }
 console.log(currentOs)
+
+
