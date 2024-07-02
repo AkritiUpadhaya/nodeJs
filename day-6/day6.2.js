@@ -3,4 +3,7 @@ const customEmitter= new EventEmitter()
 customEmitter.on('response',()=>{
     console.log('data received')
 })
+customEmitter.on('response',()=>{
+    console.log('additional info')
+})
 customEmitter.emit('response')
