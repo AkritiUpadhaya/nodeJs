@@ -1,17 +1,24 @@
 const http= require('http')
+const {readFileSync}= require('fs')
+const homePage= readFileSync('./navbar-app/index.html')
+const homeStyle= readFileSync('./navbar-app/styles.css')
+const homeLogo= readFileSync('./navbar-app/logo.svg')
+const homeBrowser= readFileSync('./navbar-app/browser-app.js')
+
 const server= http.createServer((req,res)=>{
     // console.log(req.method)
     const url= req.url
+    console.log(url)
     if(url=='/'){
         res.writeHead(200, {'content-type':'text/html'})
     // console.log('user hit the server')
-    res.write('<h1>home page</h1>')
+    res.write(homePage)
     res.end()
     }
-    else if(url=='/about'){
-        res.writeHead(200, {'content-type':'text/html'})
+    else if(url==='/styles.css'){
+        res.writeHead(200, {'content-type':'text/css'})
         // console.log('user hit the server')
-        res.write('<h1>About page</h1>')
+        res.write(homeStyle)
         res.end()
     }
  else{
