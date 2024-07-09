@@ -21,6 +21,18 @@ const server= http.createServer((req,res)=>{
         res.write(homeStyle)
         res.end()
     }
+    else if(url==='/logo.svg'){
+        res.writeHead(200, {'content-type':'image/svg=xml'})
+        // console.log('user hit the server')
+        res.write(homeLogo)
+        res.end()
+    }
+    else if(url==='/browser-app.js'){
+        res.writeHead(200, {'content-type':'text/javascript'})
+        // console.log('user hit the server')
+        res.write(homeBrowser)
+        res.end()
+    }
  else{
     res.writeHead(404, {'content-type':'text/html'})
     // console.log('user hit the server')
