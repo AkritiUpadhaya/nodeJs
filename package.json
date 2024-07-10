@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node day-4/day4.1.js",
-    "dev": "nodemon day-9/day9.1.js "
+    "dev": "nodemon day-9/day9.2.js "
   },
   "author": "",
   "license": "ISC",
