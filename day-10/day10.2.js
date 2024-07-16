@@ -11,9 +11,20 @@ app.get('/api/products',(req, res)=>{
     })
 res.json(newProduct)
 })
-app.get('/api/products/1',(req, res)=>{
-    const prod1= products.find((prod1)=> prod1.id)
+app.get('/api/products/:productID',(req, res)=>{
+    // console.log(req)
+    // console.log(req.params)
+    const {productID}= req.params
+
+    const prod1= products.find((prod)=> prod.id===Number(productID))
     res.json(prod1)
+})
+app.get('/api/products/:productID/reviews/:reviewID',(req,res)=>{
+    res.send('hello world')
+})
+app.get('/api/v1/query',(req,res)=>{
+    res.send('hi everyone')
+    console.log(req.query)
 })
 app.listen(5000, ()=>{
 console.log('server is listening on port 5000')
